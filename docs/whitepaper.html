@@ -1,0 +1,204 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>FAYO (FAYO) — Project Overview Document</title><style>@page { size: A4; margin: 20mm 18mm 20mm 18mm;
+  @bottom-left { content: "FAYO — Project Overview Document"; font: 8pt "DejaVu Sans", sans-serif; color: #7a869a; }
+  @bottom-right { content: "Page " counter(page) " / " counter(pages); font: 8pt "DejaVu Sans", sans-serif; color: #7a869a; } }
+@page :first { margin: 0; @bottom-left { content: none } @bottom-right { content: none } }
+:root { --navy: #06142e; --blue: #0d2a5c; --gold: #d4af37; --gold2: #f1d27a; }
+html, body { margin: 0; padding: 0; }
+body { font-family: "DejaVu Sans", "Helvetica", sans-serif; font-size: 10pt; line-height: 1.5; color: #1b2433; }
+a { color: #0d3b8c; text-decoration: none; }
+code { font-family: "DejaVu Sans Mono", monospace; font-size: 8pt; background: #eef2f8; padding: 0 3px; border-radius: 3px; word-break: break-all; }
+.cover { page-break-after: always; height: 297mm; box-sizing: border-box; padding: 22mm 20mm;
+  background: radial-gradient(circle at 50% 30%, #13306a 0%, #06142e 55%, #020a1a 100%); color: #e8ecf5; text-align: center; }
+.cover-logo { width: 92mm; height: 92mm; border-radius: 6mm; border: 0.6mm solid var(--gold); }
+.cover-title { color: var(--gold); font-size: 30pt; letter-spacing: 2pt; margin: 9mm 0 0; border: none; }
+.cover-sub { font-size: 15pt; color: #ffffff; margin: 2mm 0; }
+.cover-tag { color: var(--gold2); font-style: italic; margin: 0 0 9mm; }
+.cover .facts { margin: 0 auto; border-collapse: collapse; width: 100%; font-size: 9pt; }
+.cover .facts th { text-align: left; color: var(--gold); padding: 2.2mm 3mm; width: 28mm; border-bottom: 0.2mm solid #2a4378; background: none; }
+.cover .facts td { text-align: left; padding: 2.2mm 3mm; border-bottom: 0.2mm solid #2a4378; color: #e8ecf5; }
+.cover .facts a { color: #e8ecf5; }
+.cover .facts tr td, .cover .facts tr th { background: none !important; }
+.cover .facts code { background: #0f2550; color: var(--gold2); }
+.cover-date { margin-top: 10mm; font-size: 8pt; color: #8b98b3; }
+h2 { color: var(--blue); font-size: 15pt; margin: 9mm 0 3mm; padding-bottom: 1.5mm; border-bottom: 0.6mm solid var(--gold); page-break-after: avoid; }
+table { border-collapse: collapse; width: 100%; margin: 3mm 0 4mm; font-size: 8.6pt; }
+tr { page-break-inside: avoid; }
+th { background: var(--navy); color: var(--gold); text-align: left; padding: 2mm 2.5mm; }
+td { padding: 1.5mm 2.2mm; border-bottom: 0.2mm solid #d6dce8; vertical-align: top; }
+tr:nth-child(even) td { background: #f5f7fb; }
+tr.total td { font-weight: bold; background: #fbf3d9; border-top: 0.4mm solid var(--gold); }
+blockquote { margin: 3mm 0; padding: 2mm 5mm; border-left: 1.2mm solid var(--gold); background: #f7f3e6; color: var(--blue); }
+.draft { display: inline-block; font-size: 8pt; font-weight: bold; color: #7a5600; background: #fbe9b0; border: 0.3mm solid var(--gold); border-radius: 2mm; padding: 0.5mm 2.5mm; vertical-align: middle; }
+.phase { border-left: 1.2mm solid var(--gold); background: #f1f4fa; padding: 2.5mm 4mm; margin: 2.5mm 0; page-break-inside: avoid; }
+.phase b { color: var(--blue); }
+</style></head><body><div class="cover">
+  <img class="cover-logo" src="../images/fayo_logo_full_1024.png" alt="FAYO logo">
+  <h1 class="cover-title">FAYO (FAYO)</h1>
+  <p class="cover-sub">Project Overview Document</p>
+  <p class="cover-tag">Future Assets You Own · The Future Is Yours</p>
+  <table class="facts">
+    <tr><th>Network</th><td>Solana (SPL Token)</td></tr>
+    <tr><th>Total Supply</th><td>10,000,000,000 FAYO</td></tr>
+    <tr><th>Contract</th><td><code>91fqZNfSU7w12ym6DcwchXRjaqrmezgrCxGFNmvqbzHb</code></td></tr>
+    <tr><th>Website</th><td><a href="https://fayo.world">https://fayo.world</a></td></tr>
+    <tr><th>Explorer</th><td><a href="https://solscan.io/token/91fqZNfSU7w12ym6DcwchXRjaqrmezgrCxGFNmvqbzHb">solscan.io/token/91fqZN…vqbzHb</a></td></tr>
+  </table>
+  <p class="cover-date">Document version 1.0 (draft tokenomics) · Generated Oct 30, 2026</p>
+</div>
+
+<h2>1. Introduction</h2>
+<p><strong>FAYO</strong> — <em>Future Assets You Own</em> — is a community token on the Solana blockchain built around the future of AI and digital ownership.</p>
+<p>The token was created with <strong>no mint authority, no freeze authority, and immutable metadata</strong>, which makes its supply structure fixed, trustless, and irreversible. The exact scripts used to create it are published in the project's public GitHub repository.</p>
+<p>FAYO does not represent ownership, revenue rights, or investment guarantees. It is a freely transferable community token within the Solana ecosystem.</p>
+<blockquote>
+<p><em>The Future Is Yours.</em></p>
+</blockquote>
+<h2>2. Token Characteristics</h2>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Token Standard</td>
+<td>SPL (classic SPL Token program)</td>
+</tr>
+<tr>
+<td>Name / Symbol</td>
+<td>FAYO / FAYO</td>
+</tr>
+<tr>
+<td>Total Supply</td>
+<td>10,000,000,000 FAYO (fixed)</td>
+</tr>
+<tr>
+<td>Decimal Precision</td>
+<td>9</td>
+</tr>
+<tr>
+<td>Mint Authority</td>
+<td>Revoked permanently</td>
+</tr>
+<tr>
+<td>Freeze Authority</td>
+<td>Revoked permanently</td>
+</tr>
+<tr>
+<td>Metadata</td>
+<td>Immutable (Metaplex Token Metadata, <code>isMutable = false</code>)</td>
+</tr>
+<tr>
+<td>Created</td>
+<td>Oct 29, 2026</td>
+</tr>
+<tr>
+<td>Mint Address</td>
+<td><code>91fqZNfSU7w12ym6DcwchXRjaqrmezgrCxGFNmvqbzHb</code></td>
+</tr>
+<tr>
+<td>Metadata URI</td>
+<td><a href="https://gateway.irys.xyz/J2QhzSXcvzB2UcQoPYvvuAi6Ui3wxuhvLBEdWEsy4k6p">https://gateway.irys.xyz/J2QhzSXcvzB2UcQoPYvvuAi6Ui3wxuhvLBEdWEsy4k6p</a></td>
+</tr>
+</tbody>
+</table>
+<h2>3. Liquidity &amp; Trading</h2>
+<p>At the time of writing, <strong>no official liquidity pool has been announced</strong>.</p>
+<ul>
+<li><strong>Primary pool:</strong> TBA</li>
+<li><strong>DEX / aggregator routing:</strong> TBA</li>
+</ul>
+<p>The official pool address will be published only through the official channels listed in Section 8 and in the GitHub repository. Any pool or "presale" not announced there should be treated as unofficial.</p>
+<h2>4. Token Distribution <span class="draft">Draft — subject to final confirmation</span></h2>
+<p>The allocation below is a <strong>draft</strong> and is <strong>not final</strong>. Wallet addresses and vesting contracts are <strong>TBA</strong> and will be published once confirmed.</p>
+<table><thead><tr><th>Allocation</th><th>%</th><th>Amount (FAYO)</th><th>TGE</th><th>Vesting</th><th>Wallet</th><th>Contract</th></tr></thead><tbody>
+<tr><td><b>Liquidity (Initial)</b><br><small>Planned initial DEX liquidity at launch (pool TBA).</small></td><td>7%</td><td>700,000,000</td><td>100%</td><td>Unlocked</td><td>TBA</td><td>—</td></tr>
+<tr><td><b>Liquidity Reserve (Locked)</b><br><small>Reserve to be locked and released quarterly to support liquidity depth.</small></td><td>10%</td><td>1,000,000,000</td><td>0%</td><td>24 months, quarterly</td><td>TBA</td><td>TBA</td></tr>
+<tr><td><b>Liquidity Management Wallet</b><br><small>Active liquidity balancing and market depth management.</small></td><td>3%</td><td>300,000,000</td><td>100%</td><td>Unlocked</td><td>TBA</td><td>—</td></tr>
+<tr><td><b>Advertisement Treasury</b><br><small>Linear unlock for marketing and community campaigns.</small></td><td>10%</td><td>1,000,000,000</td><td>0%</td><td>12 months, monthly</td><td>TBA</td><td>TBA</td></tr>
+<tr><td><b>Creator & FAYO Team 1</b><br><small>Linear monthly unlock for founders & operations.</small></td><td>22.5%</td><td>2,250,000,000</td><td>0%</td><td>24 months, monthly</td><td>TBA</td><td>TBA</td></tr>
+<tr><td><b>Creator & FAYO Team 2</b><br><small>Linear monthly unlock for the strategic team.</small></td><td>22.5%</td><td>2,250,000,000</td><td>0%</td><td>24 months, monthly</td><td>TBA</td><td>TBA</td></tr>
+<tr><td><b>Creator & FAYO Team 3</b><br><small>Unlock for project contributors & advisors.</small></td><td>7.5%</td><td>750,000,000</td><td>0%</td><td>24 months, quarterly</td><td>TBA</td><td>TBA</td></tr>
+<tr><td><b>Developments</b><br><small>Ecosystem & infrastructure development.</small></td><td>10%</td><td>1,000,000,000</td><td>0%</td><td>12 months, monthly</td><td>TBA</td><td>TBA</td></tr>
+<tr><td><b>Service Providers</b><br><small>Payments to auditors, legal, and other service providers.</small></td><td>0.5%</td><td>50,000,000</td><td>0%</td><td>12 months, monthly</td><td>TBA</td><td>TBA</td></tr>
+<tr><td><b>Staking Rewards</b><br><small>Rewards for staking participants (staking program TBA).</small></td><td>7%</td><td>700,000,000</td><td>0%</td><td>24 months, monthly</td><td>TBA</td><td>TBA</td></tr>
+<tr class="total"><td>Total</td><td>100%</td><td>10,000,000,000</td><td></td><td></td><td></td><td></td></tr></tbody></table>
+
+<h2>5. Vesting</h2>
+<ul>
+<li>Locked allocations are planned to be vested through publicly viewable on-chain vesting contracts (e.g. Streamflow). Contract links: <strong>TBA</strong>.</li>
+<li>Team allocations (Creator &amp; FAYO Team 1–3) are planned with <strong>no cliff</strong> and linear <strong>24-month</strong> unlocks (monthly or quarterly as shown above).</li>
+<li>Advertisement, Developments and Service Provider allocations are planned with <strong>12-month</strong> monthly unlocks.</li>
+<li>Only the initial liquidity (7%) and the liquidity management wallet (3%) are planned to be unlocked at launch.</li>
+</ul>
+<h2>6. Decentralization &amp; Security</h2>
+<ul>
+<li>Mint authority revoked — no additional minting is possible</li>
+<li>Freeze authority revoked — no wallet can be frozen</li>
+<li>Metadata immutable — name, symbol and image can never be changed</li>
+<li>Classic SPL Token program — no transfer hooks, fees, or upgradeable custom logic</li>
+<li>Audit: <strong>Planned / TBA</strong></li>
+</ul>
+<p><strong>On-chain proof:</strong></p>
+<ul>
+<li>Create transaction: <a href="https://solscan.io/tx/5DRn7spAj2X3Z1BY2TQqBvnqANNkqoBZYcR85AiUkz4C7YLnspe2vj1v3cwjNtZr7cBZKmdXde6ZjoC9g7zBkvxj"><code>5DRn7spAj2…C9g7zBkvxj</code></a></li>
+<li>Revoke transaction: <a href="https://solscan.io/tx/5BCFrdLnKbW4MjHoxG9SWi9XaChQ7tKXfKz3Trn7gkwp15Ppw4EWxZaiE6461M6wYYYtgofsswNVKghr7ETNQUuE"><code>5BCFrdLnKb…hr7ETNQUuE</code></a></li>
+<li>RugCheck: <a href="https://rugcheck.xyz/tokens/91fqZNfSU7w12ym6DcwchXRjaqrmezgrCxGFNmvqbzHb">https://rugcheck.xyz/tokens/91fqZNfSU7w12ym6DcwchXRjaqrmezgrCxGFNmvqbzHb</a></li>
+</ul>
+<h2>7. Roadmap</h2>
+<p>The roadmap is directional. It contains <strong>no dates and no financial promises</strong> — value is defined by the market.</p>
+<div class="phase"><b>Phase 1 — Foundation</b><br>
+✔ Token created on Solana · ✔ Mint &amp; freeze authorities revoked · ✔ Immutable metadata · ✔ Website and official channels · ✔ Public GitHub repository with token-creation source</div>
+<div class="phase"><b>Phase 2 — Launch</b><br>
+Finalize tokenomics · Publish wallet addresses and vesting contracts · Open the official liquidity pool</div>
+<div class="phase"><b>Phase 3 — Growth</b><br>
+Community building and campaigns · Applications to market data trackers · Independent audit (planned)</div>
+<div class="phase"><b>Phase 4 — Ecosystem</b><br>
+Staking program · Community initiatives around AI and digital ownership</div>
+
+<h2>8. Official Links</h2>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Website</td>
+<td><a href="https://fayo.world">https://fayo.world</a></td>
+</tr>
+<tr>
+<td>X (Twitter)</td>
+<td><a href="https://x.com/fayo_world">https://x.com/fayo_world</a></td>
+</tr>
+<tr>
+<td>Telegram</td>
+<td><a href="https://t.me/fayo_world">https://t.me/fayo_world</a></td>
+</tr>
+<tr>
+<td>GitHub</td>
+<td><a href="https://github.com/FayoWorld/fayo">https://github.com/FayoWorld/fayo</a></td>
+</tr>
+<tr>
+<td>Solscan</td>
+<td><a href="https://solscan.io/token/91fqZNfSU7w12ym6DcwchXRjaqrmezgrCxGFNmvqbzHb">solscan.io/token/91fqZN…vqbzHb</a></td>
+</tr>
+<tr>
+<td>Solana Explorer</td>
+<td><a href="https://explorer.solana.com/address/91fqZNfSU7w12ym6DcwchXRjaqrmezgrCxGFNmvqbzHb">explorer.solana.com/address/91fqZN…vqbzHb</a></td>
+</tr>
+<tr>
+<td>RugCheck</td>
+<td><a href="https://rugcheck.xyz/tokens/91fqZNfSU7w12ym6DcwchXRjaqrmezgrCxGFNmvqbzHb">rugcheck.xyz/tokens/91fqZN…vqbzHb</a></td>
+</tr>
+</tbody>
+</table>
+<h2>9. Legal Disclaimer</h2>
+<p>FAYO is <strong>not</strong> a financial product or an investment.
+It does not represent ownership, equity, dividends, revenue sharing, or any guarantee of return or price performance.
+Participation is voluntary and at your own risk. The FAYO project team will never ask for private keys or seed phrases.
+Nothing in this document is financial, legal, or tax advice. Always verify the contract address <code>91fqZNfSU7w12ym6DcwchXRjaqrmezgrCxGFNmvqbzHb</code> through the official channels above.</p></body></html>

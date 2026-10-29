@@ -1,0 +1,29 @@
+{
+  "name": "fayo-token",
+  "version": "1.0.0",
+  "description": "Create the FAYO classic SPL token with immutable Metaplex metadata (RugCheck-friendly), step by step",
+  "scripts": {
+    "step1:upload": "node src/1-upload.js",
+    "step2:create": "node src/2-create.js",
+    "step3:revoke": "node src/3-revoke.js",
+    "step4:verify": "node src/4-verify.js",
+    "estimate": "node tools/estimate-cost.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED",
+  "type": "module",
+  "dependencies": {
+    "@irys/upload": "0.0.15",
+    "@irys/upload-solana": "0.1.8",
+    "@metaplex-foundation/mpl-token-metadata": "3.4.0",
+    "@metaplex-foundation/mpl-toolbox": "0.11.5",
+    "@metaplex-foundation/umi": "1.6.0",
+    "@metaplex-foundation/umi-bundle-defaults": "1.6.0",
+    "@solana/web3.js": "1.99.0"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  }
+}

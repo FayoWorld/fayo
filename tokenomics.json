@@ -1,0 +1,152 @@
+{
+  "_comment": "Single source of truth for README.md and Whitepaper.pdf. Edit this file, then run: python3 scripts/build_readme.py",
+  "project": {
+    "name": "FAYO",
+    "ticker": "$FAYO",
+    "symbol": "FAYO",
+    "acronym": "Future Assets You Own",
+    "tagline": "The Future Is Yours",
+    "description": "FAYO — Future Assets You Own. A community token on Solana built around the future of AI and digital ownership. The Future Is Yours.",
+    "github_url": "https://github.com/FayoWorld/fayo",
+    "website": "https://fayo.world",
+    "twitter": "https://x.com/fayo_world",
+    "telegram": "https://t.me/fayo_world"
+  },
+  "token": {
+    "blockchain": "Solana",
+    "standard": "SPL (classic SPL Token program)",
+    "decimals": 9,
+    "total_supply": 10000000000,
+    "mint": "91fqZNfSU7w12ym6DcwchXRjaqrmezgrCxGFNmvqbzHb",
+    "created": "Oct 29, 2026",
+    "create_tx": "5DRn7spAj2X3Z1BY2TQqBvnqANNkqoBZYcR85AiUkz4C7YLnspe2vj1v3cwjNtZr7cBZKmdXde6ZjoC9g7zBkvxj",
+    "revoke_tx": "5BCFrdLnKbW4MjHoxG9SWi9XaChQ7tKXfKz3Trn7gkwp15Ppw4EWxZaiE6461M6wYYYtgofsswNVKghr7ETNQUuE",
+    "metadata_uri": "https://gateway.irys.xyz/J2QhzSXcvzB2UcQoPYvvuAi6Ui3wxuhvLBEdWEsy4k6p",
+    "image_uri": "https://gateway.irys.xyz/HxRGabpU7KAr1b45wNvv9j1AhbeRLB1fB6NTWtMzdinp"
+  },
+  "tba": {
+    "liquidity_pool": "TBA",
+    "jupiter": "TBA",
+    "meteora": "TBA",
+    "streamflow_dashboard": "TBA",
+    "coinmarketcap": "TBA",
+    "coingecko": "TBA",
+    "audit": "Planned / TBA",
+    "sns": "TBA",
+    "domain_verification": "TBA",
+    "staking": "TBA"
+  },
+  "allocation_status": "Draft — subject to final confirmation",
+  "allocations": [
+    {
+      "section": "Liquidity (Initial)",
+      "percent": 7,
+      "tge_unlock": "100%",
+      "cliff": "0",
+      "duration": "–",
+      "frequency": "Instant",
+      "notes": "Planned initial DEX liquidity at launch (pool TBA).",
+      "wallet": "TBA",
+      "vesting_contract": "—"
+    },
+    {
+      "section": "Liquidity Reserve (Locked)",
+      "percent": 10,
+      "tge_unlock": "0%",
+      "cliff": "0",
+      "duration": "24 months",
+      "frequency": "Quarterly",
+      "notes": "Reserve to be locked and released quarterly to support liquidity depth.",
+      "wallet": "TBA",
+      "vesting_contract": "TBA"
+    },
+    {
+      "section": "Liquidity Management Wallet",
+      "percent": 3,
+      "tge_unlock": "100%",
+      "cliff": "0",
+      "duration": "–",
+      "frequency": "Unlocked",
+      "notes": "Active liquidity balancing and market depth management.",
+      "wallet": "TBA",
+      "vesting_contract": "—"
+    },
+    {
+      "section": "Advertisement Treasury",
+      "percent": 10,
+      "tge_unlock": "0%",
+      "cliff": "0",
+      "duration": "12 months",
+      "frequency": "Monthly",
+      "notes": "Linear unlock for marketing and community campaigns.",
+      "wallet": "TBA",
+      "vesting_contract": "TBA"
+    },
+    {
+      "section": "Creator & FAYO Team 1",
+      "percent": 22.5,
+      "tge_unlock": "0%",
+      "cliff": "0",
+      "duration": "24 months",
+      "frequency": "Monthly",
+      "notes": "Linear monthly unlock for founders & operations.",
+      "wallet": "TBA",
+      "vesting_contract": "TBA"
+    },
+    {
+      "section": "Creator & FAYO Team 2",
+      "percent": 22.5,
+      "tge_unlock": "0%",
+      "cliff": "0",
+      "duration": "24 months",
+      "frequency": "Monthly",
+      "notes": "Linear monthly unlock for the strategic team.",
+      "wallet": "TBA",
+      "vesting_contract": "TBA"
+    },
+    {
+      "section": "Creator & FAYO Team 3",
+      "percent": 7.5,
+      "tge_unlock": "0%",
+      "cliff": "0",
+      "duration": "24 months",
+      "frequency": "Quarterly",
+      "notes": "Unlock for project contributors & advisors.",
+      "wallet": "TBA",
+      "vesting_contract": "TBA"
+    },
+    {
+      "section": "Developments",
+      "percent": 10,
+      "tge_unlock": "0%",
+      "cliff": "0",
+      "duration": "12 months",
+      "frequency": "Monthly",
+      "notes": "Ecosystem & infrastructure development.",
+      "wallet": "TBA",
+      "vesting_contract": "TBA"
+    },
+    {
+      "section": "Service Providers",
+      "percent": 0.5,
+      "tge_unlock": "0%",
+      "cliff": "0",
+      "duration": "12 months",
+      "frequency": "Monthly",
+      "notes": "Payments to auditors, legal, and other service providers.",
+      "wallet": "TBA",
+      "vesting_contract": "TBA"
+    },
+    {
+      "section": "Staking Rewards",
+      "percent": 7,
+      "tge_unlock": "0%",
+      "cliff": "0",
+      "duration": "24 months",
+      "frequency": "Monthly",
+      "notes": "Rewards for staking participants (staking program TBA).",
+      "wallet": "TBA",
+      "vesting_contract": "TBA"
+    }
+  ]
+}

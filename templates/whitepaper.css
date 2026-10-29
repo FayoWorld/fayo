@@ -1,0 +1,33 @@
+@page { size: A4; margin: 20mm 18mm 20mm 18mm;
+  @bottom-left { content: "FAYO — Project Overview Document"; font: 8pt "DejaVu Sans", sans-serif; color: #7a869a; }
+  @bottom-right { content: "Page " counter(page) " / " counter(pages); font: 8pt "DejaVu Sans", sans-serif; color: #7a869a; } }
+@page :first { margin: 0; @bottom-left { content: none } @bottom-right { content: none } }
+:root { --navy: #06142e; --blue: #0d2a5c; --gold: #d4af37; --gold2: #f1d27a; }
+html, body { margin: 0; padding: 0; }
+body { font-family: "DejaVu Sans", "Helvetica", sans-serif; font-size: 10pt; line-height: 1.5; color: #1b2433; }
+a { color: #0d3b8c; text-decoration: none; }
+code { font-family: "DejaVu Sans Mono", monospace; font-size: 8pt; background: #eef2f8; padding: 0 3px; border-radius: 3px; word-break: break-all; }
+.cover { page-break-after: always; height: 297mm; box-sizing: border-box; padding: 22mm 20mm;
+  background: radial-gradient(circle at 50% 30%, #13306a 0%, #06142e 55%, #020a1a 100%); color: #e8ecf5; text-align: center; }
+.cover-logo { width: 92mm; height: 92mm; border-radius: 6mm; border: 0.6mm solid var(--gold); }
+.cover-title { color: var(--gold); font-size: 30pt; letter-spacing: 2pt; margin: 9mm 0 0; border: none; }
+.cover-sub { font-size: 15pt; color: #ffffff; margin: 2mm 0; }
+.cover-tag { color: var(--gold2); font-style: italic; margin: 0 0 9mm; }
+.cover .facts { margin: 0 auto; border-collapse: collapse; width: 100%; font-size: 9pt; }
+.cover .facts th { text-align: left; color: var(--gold); padding: 2.2mm 3mm; width: 28mm; border-bottom: 0.2mm solid #2a4378; background: none; }
+.cover .facts td { text-align: left; padding: 2.2mm 3mm; border-bottom: 0.2mm solid #2a4378; color: #e8ecf5; }
+.cover .facts a { color: #e8ecf5; }
+.cover .facts tr td, .cover .facts tr th { background: none !important; }
+.cover .facts code { background: #0f2550; color: var(--gold2); }
+.cover-date { margin-top: 10mm; font-size: 8pt; color: #8b98b3; }
+h2 { color: var(--blue); font-size: 15pt; margin: 9mm 0 3mm; padding-bottom: 1.5mm; border-bottom: 0.6mm solid var(--gold); page-break-after: avoid; }
+table { border-collapse: collapse; width: 100%; margin: 3mm 0 4mm; font-size: 8.6pt; }
+tr { page-break-inside: avoid; }
+th { background: var(--navy); color: var(--gold); text-align: left; padding: 2mm 2.5mm; }
+td { padding: 1.5mm 2.2mm; border-bottom: 0.2mm solid #d6dce8; vertical-align: top; }
+tr:nth-child(even) td { background: #f5f7fb; }
+tr.total td { font-weight: bold; background: #fbf3d9; border-top: 0.4mm solid var(--gold); }
+blockquote { margin: 3mm 0; padding: 2mm 5mm; border-left: 1.2mm solid var(--gold); background: #f7f3e6; color: var(--blue); }
+.draft { display: inline-block; font-size: 8pt; font-weight: bold; color: #7a5600; background: #fbe9b0; border: 0.3mm solid var(--gold); border-radius: 2mm; padding: 0.5mm 2.5mm; vertical-align: middle; }
+.phase { border-left: 1.2mm solid var(--gold); background: #f1f4fa; padding: 2.5mm 4mm; margin: 2.5mm 0; page-break-inside: avoid; }
+.phase b { color: var(--blue); }

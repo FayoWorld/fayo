@@ -1,0 +1,16 @@
+# secrets — never commit
+*.keypair.json
+mint-keypair*.json
+creator.json
+id.json
+state.*.json
+state*.json.tmp
+.env
+.env.*
+# build / deps
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
