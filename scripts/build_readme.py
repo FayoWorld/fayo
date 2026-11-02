@@ -22,7 +22,7 @@ def pct(p):
 
 
 def link_or_text(v, label):
-    """TBA / — stay as text; base58 addresses become Solscan links; URLs become links."""
+    """Plain text (e.g. "—") stays as text; base58 addresses become Solscan account links; URLs become links."""
     if B58.match(v):
         return f"[{label}](https://solscan.io/account/{v})"
     if v.startswith("http"):
@@ -30,68 +30,119 @@ def link_or_text(v, label):
     return v
 
 
+def html_link(v, label):
+    if B58.match(v):
+        return f'<a href="https://solscan.io/account/{v}">{label}</a>'
+    if v.startswith("http"):
+        return f'<a href="{v}">{label}</a>'
+    return v
+
+
 def short(s, n=8):
     return f"{s[:n]}…{s[-n:]}"
 
 
+def tx_url(sig):
+    return f"https://solscan.io/tx/{sig}"
+
+
+def acct_url(a):
+    return f"https://solscan.io/account/{a}"
+
+
 def build_context(d):
-    p, t = d["project"], d["token"]
+    p, t, st, v = d["project"], d["token"], d["staking"], d["vesting"]
     supply = t["total_supply"]
     allocs = d["allocations"]
     total = round(sum(a["percent"] for a in allocs), 6)
     if total != 100:
         sys.exit(f"ERROR: allocations sum to {total}%, expected 100%")
-    by = {a["section"]: a for a in allocs}
 
     def amount(a):
-        return fmt_int(supply * a["percent"] / 100)
+        return a.get("amount_display") or fmt_int(supply * a["percent"] / 100)
 
-    # README table (fixed column layout; Wallet and Vesting Contract cells auto-link addresses/URLs)
-    rows = ["| Section | % of Total Supply | % Unlock at TGE | Cliff | Unlock Duration | Frequency | Notes | Wallet | Vesting Contract |",
-            "|----------|------------------|----------------|--------|------------------|------------|--------|------|------------------|"]
+    def wlabel(a):
+        return a.get("wallet_label", "Wallet")
+
+    def clabel(a):
+        return a.get("contract_label", "Streamflow")
+
+    # README allocation table (Wallet and Vesting Contract cells auto-link addresses/URLs)
+    rows = ["| Section | % of Total Supply | Amount (FAYO) | % Unlock at TGE | Cliff | Unlock Duration | Frequency | Notes | Wallet | Vesting Contract |",
+            "|----------|------------------|---------------|----------------|--------|------------------|------------|--------|------|------------------|"]
     for a in allocs:
-        rows.append(f"| **{a['section']}** | {pct(a['percent'])} | {a['tge_unlock']} | {a['cliff']} | {a['duration']} | {a['frequency']} | "
-                    f"{a['notes']} | {link_or_text(a['wallet'], 'Wallet')} | {link_or_text(a['vesting_contract'], 'Vesting Contract')} |")
-    rows.append(f"| **Total** | **{pct(total)}** | | | | | {fmt_int(supply)} {p['ticker']} | | |")
+        rows.append(f"| **{a['section']}** | {pct(a['percent'])} | {amount(a)} | {a['tge_unlock']} | {a['cliff']} | {a['duration']} | {a['frequency']} | "
+                    f"{a['notes']} | {link_or_text(a['wallet'], wlabel(a))} | {link_or_text(a['vesting_contract'], clabel(a))} |")
+    rows.append(f"| **Total** | **{pct(total)}** | **{fmt_int(supply)}** | | | | | | | |")
 
-    # Whitepaper table (HTML so we can style the total row)
-    def wl(v, label):
-        if B58.match(v):
-            return f'<a href="https://solscan.io/account/{v}">{label}</a>'
-        if v.startswith("http"):
-            return f'<a href="{v}">{label}</a>'
-        return v
-    h = ['<table><thead><tr><th>Allocation</th><th>%</th><th>Amount ({})</th><th>TGE</th><th>Vesting</th><th>Wallet</th><th>Contract</th></tr></thead><tbody>'.format(p["symbol"])]
+    # README on-chain proof table (full addresses + tx links)
+    proof = ["| Section | Wallet / Recipient | Vesting Contract / Pool | Transaction |",
+             "|---------|--------------------|-------------------------|-------------|"]
+    for a in allocs:
+        w = a["wallet"] if B58.match(a["wallet"]) else st["stake_pool"]
+        wcell = f"[`{w}`]({acct_url(w)})" if B58.match(a["wallet"]) else f"Stake pool [`{w}`]({st['stake_pool_url']})"
+        if a.get("contract_id"):
+            ccell = f"[`{a['contract_id']}`]({a['vesting_contract']})"
+        elif B58.match(a["vesting_contract"]):
+            ccell = f"Reward pool [`{a['vesting_contract']}`]({acct_url(a['vesting_contract'])})"
+        else:
+            ccell = a["vesting_contract"]
+        proof.append(f"| **{a['section']}** | {wcell} | {ccell} | [{a['tx_label']}: `{short(a['tx'], 6)}`]({tx_url(a['tx'])}) |")
+
+    # Whitepaper allocation table (HTML so we can style the total row)
+    h = ['<table><thead><tr><th>Allocation</th><th>%</th><th>Amount ({})</th><th>TGE</th><th>Vesting</th><th>Wallet</th><th>Contract</th><th>Tx</th></tr></thead><tbody>'.format(p["symbol"])]
     for a in allocs:
         vest = "Unlocked" if a["duration"] in ("–", "-", "") else f"{a['duration']}, {a['frequency'].lower()}"
         h.append(f"<tr><td><b>{a['section']}</b><br><small>{a['notes']}</small></td><td>{pct(a['percent'])}</td><td>{amount(a)}</td>"
-                 f"<td>{a['tge_unlock']}</td><td>{vest}</td><td>{wl(a['wallet'], 'Wallet')}</td><td>{wl(a['vesting_contract'], 'Contract')}</td></tr>")
-    h.append(f'<tr class="total"><td>Total</td><td>{pct(total)}</td><td>{fmt_int(supply)}</td><td></td><td></td><td></td><td></td></tr></tbody></table>')
+                 f"<td>{a['tge_unlock']}</td><td>{vest}</td><td>{html_link(a['wallet'], wlabel(a))}</td><td>{html_link(a['vesting_contract'], clabel(a))}</td>"
+                 f"<td><a href=\"{tx_url(a['tx'])}\">{a['tx_label']}</a></td></tr>")
+    h.append(f'<tr class="total"><td>Total</td><td>{pct(total)}</td><td>{fmt_int(supply)}</td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table>')
+
+    # Whitepaper address appendix (full addresses, small font)
+    ap = ['<table class="addr"><thead><tr><th>Allocation</th><th>Wallet / Recipient</th><th>Vesting contract / Pool</th></tr></thead><tbody>']
+    for a in allocs:
+        w = a["wallet"] if B58.match(a["wallet"]) else st["stake_pool"]
+        c = a.get("contract_id") or (a["vesting_contract"] if B58.match(a["vesting_contract"]) else "—")
+        ap.append(f"<tr><td>{a['section']}</td><td><code>{w}</code></td><td><code>{c}</code></td></tr>")
+    ap.append("</tbody></table>")
 
     mint = t["mint"]
+    rate = 0.0015
     ctx = {
         "allocation_table": "\n".join(rows),
+        "proof_table": "\n".join(proof),
         "wp_allocation_table": "\n".join(h),
+        "wp_address_table": "\n".join(ap),
         "allocation_status": d.get("allocation_status", ""),
         "total_supply_fmt": fmt_int(supply),
-        "reserve_amount": amount(by["Liquidity Reserve (Locked)"]) if "Liquidity Reserve (Locked)" in by else "TBA",
-        "management_amount": amount(by["Liquidity Management Wallet"]) if "Liquidity Management Wallet" in by else "TBA",
         "solscan_token": f"https://solscan.io/token/{mint}",
         "explorer_token": f"https://explorer.solana.com/address/{mint}",
         "rugcheck": f"https://rugcheck.xyz/tokens/{mint}",
-        "create_tx_url": f"https://solscan.io/tx/{t['create_tx']}",
-        "revoke_tx_url": f"https://solscan.io/tx/{t['revoke_tx']}",
+        "creator_wallet_url": acct_url(t["creator_wallet"]),
+        "create_tx_url": tx_url(t["create_tx"]),
+        "revoke_tx_url": tx_url(t["revoke_tx"]),
         "create_tx_short": short(t["create_tx"], 10),
         "revoke_tx_short": short(t["revoke_tx"], 10),
         "mint_short": short(mint, 6),
+        "stake_pool_short": short(st["stake_pool"], 6),
+        "reward_pool_url": acct_url(st["reward_pool"]),
+        "reward_fund_fmt": fmt_int(st["reward_fund"]),
+        "staking_create_pool_tx_url": tx_url(st["create_pool_tx"]),
+        "staking_create_reward_pool_tx_url": tx_url(st["create_reward_pool_tx"]),
+        "staking_fund_tx_url": tx_url(st["fund_tx"]),
+        "staking_create_pool_tx_short": short(st["create_pool_tx"], 10),
+        "staking_create_reward_pool_tx_short": short(st["create_reward_pool_tx"], 10),
+        "staking_fund_tx_short": short(st["fund_tx"], 10),
+        "rate_6m_pct": f"{rate * 180 * 1 * 100:.0f}%",
+        "rate_12m_pct": f"{rate * 365 * 2 * 100:.0f}%",
         "website_host": re.sub(r"^https?://", "", p["website"]).rstrip("/"),
         "github_path": re.sub(r"^https?://github\.com/", "", p["github_url"]).rstrip("/"),
         "build_date": datetime.date.today().strftime("%b %d, %Y"),
-        "doc_version": d.get("doc_version", "1.0 (draft tokenomics)"),
+        "doc_version": d.get("doc_version", "1.0"),
     }
-    for sect in ("project", "token", "tba"):
-        for k, v in d[sect].items():
-            ctx[f"{sect}.{k}"] = v
+    for sect in ("project", "token", "links", "staking", "vesting"):
+        for k, val in d[sect].items():
+            ctx[f"{sect}.{k}"] = val
     return ctx
 
 

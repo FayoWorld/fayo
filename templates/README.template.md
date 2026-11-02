@@ -21,7 +21,8 @@ It does not promise returns or the “next generation” of anything — it is a
 - ✅ **No freeze authority** — Tokens cannot be frozen
 - ✅ **Immutable metadata** — Permanently locked on-chain
 - ✅ **Open token source** — The exact scripts used to create the token are in [`token/`](token/)
-- 🕓 **Transparent vesting** — Vesting contracts will be published publicly (TBA)
+- 🔐 **Transparent vesting** — 7 non-cancelable, non-transferable [Streamflow](https://app.streamflow.finance) vesting contracts, all linked below
+- 🪙 **On-chain staking** — Public [Streamflow staking pool]({{staking.stake_pool_url}}) funded with {{reward_fund_fmt}} {{project.ticker}}
 
 ---
 
@@ -40,38 +41,65 @@ It does not promise returns or the “next generation” of anything — it is a
 | **Freeze Authority** | ❌ Revoked |
 | **Metadata** | 🔒 Immutable |
 | **Created** | {{token.created}} |
-| **SNS ID** | {{tba.sns}} |
+| **Creator Wallet** | [`{{token.creator_wallet}}`]({{creator_wallet_url}}) |
+| **Liquidity Pool** | {{links.liquidity_pool}} |
+| **Staking** | [Streamflow Stake Pool]({{staking.stake_pool_url}}) |
+| **SNS ID** | {{links.sns}} |
 | **Website** | [{{website_host}}]({{project.website}}) |
 
 ---
 
 ## 📊 Token Allocation & Distribution
 
-> ⚠️ **{{allocation_status}}.** The tokenomics below are a draft and are **not final**. Wallet addresses and vesting contracts will be published here once confirmed.
+> ✅ **{{allocation_status}}.** Every address and transaction below can be verified on Solscan and Streamflow.
 
 {{allocation_table}}
 
-- 🌐 Vesting Contracts (Streamflow) — {{tba.streamflow_dashboard}}
+**Vesting terms (all 7 Streamflow contracts):** started {{vesting.start}}, linear {{vesting.unlock_period}} unlocks, no cliff, cancelable: **{{vesting.cancelable}}**, transferable: **{{vesting.transferable}}**.
+
+> ℹ️ {{vesting.fee_note}}
+
+### 🔗 On-chain Proof (wallets, contracts, transactions)
+
+{{proof_table}}
 
 ---
 
 ## 🏦 Liquidity Structure
 
-💧 Planned liquidity in {{project.name}} is multi-layered (draft):
-- **7% initial** — planned for the launch liquidity pool (DEX and pool: {{tba.liquidity_pool}}).
-- **10% reserve** — {{reserve_amount}} {{project.ticker}} planned to be locked, unlocking quarterly over 24 months.
-- **3% management wallet** — {{management_amount}} {{project.ticker}} for liquidity balancing and market depth.
+💧 Liquidity in {{project.name}} is multi-layered:
+- **10% Initial Liquidity** — 1,000,000,000 {{project.ticker}}, unlocked, held for the future Meteora liquidity pool.
+- **5% Liquidity Management** — 500,000,000 {{project.ticker}}, unlocked emergency reserve for pool management.
+- **10% Liquidity Reserve** — 1,000,000,000 {{project.ticker}}, locked in Streamflow and unlocking monthly over 12 months.
 
-- 💧 Liquidity Pool — {{tba.liquidity_pool}}
-- 🔒 Liquidity lock / vesting contracts — {{tba.streamflow_dashboard}}
+- 💧 Meteora Liquidity Pool — {{links.meteora}}
+
+The official pool address will be published only in this repository and the official channels below. Any pool not announced there should be treated as unofficial.
 
 ---
 
 ## 🪙 Staking
 
-- 7% of total supply is allocated (draft) for staking rewards.
-- Planned linear distribution over 24 months.
-- Staking platform and contract: **{{tba.staking}}**
+{{project.name}} staking runs on **{{staking.platform}}** (created {{staking.created}}).
+
+| Parameter | Value |
+|-----------|-------|
+| **Stake Pool** | [`{{staking.stake_pool}}`]({{staking.stake_pool_url}}) |
+| **Reward Pool** | [`{{staking.reward_pool}}`]({{reward_pool_url}}) ({{staking.reward_type}}) |
+| **Reward Fund** | {{reward_fund_fmt}} {{project.ticker}} (finite) |
+| **Lock Period** | {{staking.lock}} |
+| **Weight** | {{staking.weight}} |
+| **Reward Rate** | {{staking.reward_rate}} |
+| **Cap / Expiry** | {{staking.cap}} · {{staking.expiry}} |
+| **Create Pool Tx** | [`{{staking_create_pool_tx_short}}`]({{staking_create_pool_tx_url}}) |
+| **Create Reward Pool Tx** | [`{{staking_create_reward_pool_tx_short}}`]({{staking_create_reward_pool_tx_url}}) |
+| **Fund Reward Pool Tx** | [`{{staking_fund_tx_short}}`]({{staking_fund_tx_url}}) |
+
+At the fixed rate this works out to roughly **{{rate_6m_pct}} in total for a 6-month lock (1x)** and roughly **{{rate_12m_pct}} annualized for a 12-month lock (2x)**, *while the reward fund lasts*.
+
+> ⚠️ Rewards are paid from a **finite fund** of {{reward_fund_fmt}} {{project.ticker}}. When the fund is exhausted, rewards **stop**. The reward rate is not a promise of returns, and nothing about price or value is guaranteed. Staked tokens stay locked for the period you choose.
+
+👉 [Stake FAYO on Streamflow]({{staking.stake_pool_url}})
 
 ---
 
@@ -87,9 +115,10 @@ It does not promise returns or the “next generation” of anything — it is a
 | Revoke Transaction | [`{{revoke_tx_short}}`]({{revoke_tx_url}}) |
 | On-chain Metadata | [metadata.json]({{token.metadata_uri}}) ([copy in repo](metadata.json)) |
 | RugCheck | [Report]({{rugcheck}}) |
-| Audit | {{tba.audit}} |
-| SNS | {{tba.sns}} |
-| Domain Verification | {{tba.domain_verification}} |
+| Vesting Contracts | 7 × Streamflow, non-cancelable ✅ |
+| Audit | {{links.audit}} |
+| SNS | {{links.sns}} |
+| Domain Verification | {{links.domain_verification}} |
 | Website | [{{project.website}}]({{project.website}}) |
 
 You can verify all of the above yourself on [Solscan]({{solscan_token}}), [Solana Explorer]({{explorer_token}}) and [RugCheck]({{rugcheck}}).
@@ -105,10 +134,11 @@ You can verify all of the above yourself on [Solscan]({{solscan_token}}), [Solan
 - 🔎 Solscan — [Token Page]({{solscan_token}})
 - 🧭 Solana Explorer — [Token Page]({{explorer_token}})
 - 🛡️ RugCheck — [Token Report]({{rugcheck}})
-- 💧 Meteora Pool — {{tba.meteora}}
-- 💧 Jupiter Swap — {{tba.jupiter}}
-- 📈 CoinMarketCap — {{tba.coinmarketcap}}
-- 🦎 CoinGecko — {{tba.coingecko}}
+- 🪙 Staking — [Streamflow Stake Pool]({{staking.stake_pool_url}})
+- 💧 Meteora Pool — {{links.meteora}}
+- 💧 Jupiter Swap — {{links.jupiter}}
+- 📈 CoinMarketCap — {{links.coinmarketcap}}
+- 🦎 CoinGecko — {{links.coingecko}}
 - 📄 Project Overview Document — [Whitepaper.pdf](Whitepaper.pdf)
 
 > Always double-check the contract address: **`{{token.mint}}`**
