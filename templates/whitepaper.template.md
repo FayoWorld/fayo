@@ -47,7 +47,7 @@ The Meteora liquidity pool has **not been created yet**.
 - **Primary pool (Meteora):** {{links.meteora}}
 - **DEX / aggregator routing (Jupiter):** {{links.jupiter}}
 - **Initial Liquidity wallet (10%, unlocked):** <a href="https://solscan.io/account/21jP79P297pg91xgpu3SSvNFhX4bASyZtwdoNS3GhHEw"><code>21jP79P297pg91xgpu3SSvNFhX4bASyZtwdoNS3GhHEw</code></a>
-- **Liquidity Management wallet (5%, unlocked emergency reserve):** <a href="https://solscan.io/account/JBMoTF7h4HRhagXWmNnGiVeMN7Wsedne4zVsvPwCM1ew"><code>JBMoTF7h4HRhagXWmNnGiVeMN7Wsedne4zVsvPwCM1ew</code></a>
+- **Liquidity Management wallet (4.5%, unlocked emergency reserve):** <a href="https://solscan.io/account/JBMoTF7h4HRhagXWmNnGiVeMN7Wsedne4zVsvPwCM1ew"><code>JBMoTF7h4HRhagXWmNnGiVeMN7Wsedne4zVsvPwCM1ew</code></a>
 - **Liquidity Reserve (10%)** is locked in a Streamflow contract and unlocks monthly over 12 months.
 
 The official pool address will be published only through the official channels listed in Section 9 and in the GitHub repository. Any pool or "presale" not announced there should be treated as unofficial.
@@ -66,11 +66,12 @@ The allocation below is **final** and live on Solana mainnet. Every wallet, vest
 
 ## 5. Vesting
 
-- All locked allocations are held in **7 Streamflow vesting contracts** that are **non-cancelable** and **non-transferable**.
+- All locked allocations are held in **8 Streamflow vesting contracts** that are **non-cancelable** and **non-transferable**.
 - Vesting started **{{vesting.start}}** with **no cliff** and linear {{vesting.unlock_period}} unlocks.
 - **Creator (20%)** vests over **24 months**.
 - **Exchange Listings (16%), Liquidity Reserve (10%), Advertising &amp; Marketing (10%), Airdrop (10%), Support &amp; Development Team (10%) and Services &amp; Providers (1%)** vest over **12 months**.
-- Only **Initial Liquidity (10%)** and **Liquidity Management (5%)** are unlocked. **Staking Rewards (8%)** are locked in the Streamflow staking reward pool.
+- **Advertiser (0.5%)** vests over **12 months**, starting Nov 3, 2026 (funded from Liquidity Management).
+- Only **Initial Liquidity (10%)** and **Liquidity Management (4.5%)** are unlocked. **Staking Rewards (8%)** are locked in the Streamflow staking reward pool.
 
 ## 6. Staking
 
@@ -112,7 +113,7 @@ The roadmap is directional. It contains **no dates and no financial promises** �
 <div class="phase"><b>Phase 1 — Foundation</b><br>
 ✔ Token created on Solana · ✔ Mint &amp; freeze authorities revoked · ✔ Immutable metadata · ✔ Website and official channels · ✔ Public GitHub repository with token-creation source</div>
 <div class="phase"><b>Phase 2 — Launch</b><br>
-✔ Final tokenomics · ✔ Wallets funded and published · ✔ 7 Streamflow vesting contracts · ✔ Streamflow staking pool · Open the official Meteora liquidity pool (coming soon)</div>
+✔ Final tokenomics · ✔ Wallets funded and published · ✔ 8 Streamflow vesting contracts · ✔ Streamflow staking pool · Open the official Meteora liquidity pool (coming soon)</div>
 <div class="phase"><b>Phase 3 — Growth</b><br>
 Community building and campaigns · Applications to market data trackers · Independent audit (planned)</div>
 <div class="phase"><b>Phase 4 — Ecosystem</b><br>

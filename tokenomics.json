@@ -1,6 +1,6 @@
 {
   "_comment": "Single source of truth for README.md and Whitepaper.pdf. Edit this file, then run: python3 scripts/build_readme.py",
-  "doc_version": "2.0 (final tokenomics)",
+  "doc_version": "2.1 (Advertiser allocation added Nov 3, 2026)",
   "project": {
     "name": "FAYO",
     "ticker": "$FAYO",
@@ -28,11 +28,11 @@
   },
   "vesting": {
     "platform": "Streamflow",
-    "start": "Oct 30, 2026 (~11:20 UTC)",
+    "start": "Oct 30, 2026 (~11:20 UTC); Advertiser contract Nov 3, 2026",
     "unlock_period": "monthly (every 30 days)",
     "cancelable": "No",
     "transferable": "No",
-    "fee_note": "Streamflow charged a 0.19% fee on the 7.7B FAYO placed in vesting contracts (14,630,000 FAYO). This fee was taken from the 8% staking allocation, so 785,370,000 FAYO were funded into the staking reward pool."
+    "fee_note": "Streamflow charged a 0.19% fee on the 7.7B FAYO placed in vesting contracts (14,630,000 FAYO). This fee was taken from the 8% staking allocation, so 785,370,000 FAYO were funded into the staking reward pool. The Advertiser contract (50,000,000 FAYO, added Nov 3, 2026) carried a separate 95,000 FAYO fee, paid from the Liquidity Management wallet."
   },
   "staking": {
     "platform": "Streamflow Staking",
@@ -78,16 +78,17 @@
     },
     {
       "section": "Liquidity Management",
-      "percent": 5,
+      "percent": 4.5,
       "tge_unlock": "100%",
       "cliff": "0",
       "duration": "–",
       "frequency": "Unlocked",
-      "notes": "Unlocked emergency reserve for liquidity pool management.",
+      "notes": "Unlocked emergency reserve for liquidity pool management. Originally 5%: on Nov 3, 2026, 0.5% (50,000,000 FAYO) moved to the Advertiser vesting contract, and its 95,000 FAYO Streamflow fee (0.19%) was paid from this wallet.",
       "wallet": "JBMoTF7h4HRhagXWmNnGiVeMN7Wsedne4zVsvPwCM1ew",
       "vesting_contract": "—",
       "tx": "36VtEKU55tofnfBMVLHhv1MfhWaDW4VW5euLGHsCLAvnPJEctpe9mBNXKUYL73yRWrNGcauZmTR8UHnhdDfdJjVV",
-      "tx_label": "Transfer"
+      "tx_label": "Transfer",
+      "amount_display": "449,905,000"
     },
     {
       "section": "Staking Rewards",
@@ -202,6 +203,20 @@
       "contract_id": "25XG4v5MKu222P1nF9Jwg97CW4vYzZqoVV7Mz5ic8BMV",
       "tx": "TAjCkwCVYTD2FX9iuqUPhXQzRTzY1ys3W5CuMa1Zih9PiSd73wAKXjAKD8oFTE8T2XHzpD4KUJ8dt5ESLsSpTXm",
       "tx_label": "Create vesting"
+    },
+    {
+      "section": "Advertiser",
+      "percent": 0.5,
+      "tge_unlock": "0%",
+      "cliff": "0",
+      "duration": "12 months",
+      "frequency": "Monthly",
+      "notes": "Advertiser allocation, linear monthly vesting (started Nov 3, 2026). Funded from Liquidity Management.",
+      "wallet": "HyjPJutQS3FURYVKthhpjcQT3FrbLhThte6c3ZJm93GV",
+      "vesting_contract": "https://app.streamflow.finance/contract/solana/mainnet/8fTxKpJiwcyHuWQKoDF1bH2YP9S1HnzkPTbKpy2Qoe1u",
+      "tx": "34zsTQEVzYhPnDwzfSHBX5SMm5PMQo1eBaq5kaHdn8Tq7h8St5ghXsHvUi2H4htX3qg5J71tATAEKHmyWZ77HAjT",
+      "tx_label": "Create vesting",
+      "contract_id": "8fTxKpJiwcyHuWQKoDF1bH2YP9S1HnzkPTbKpy2Qoe1u"
     }
   ]
 }

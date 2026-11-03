@@ -56,7 +56,7 @@ It does not promise returns or the “next generation” of anything — it is a
 | Section | % of Total Supply | Amount (FAYO) | % Unlock at TGE | Cliff | Unlock Duration | Frequency | Notes | Wallet | Vesting Contract |
 |----------|------------------|---------------|----------------|--------|------------------|------------|--------|------|------------------|
 | **Initial Liquidity** | 10% | 1,000,000,000 | 100% | 0 | – | Unlocked | Reserved for the future Meteora liquidity pool (pool: coming soon). | [Wallet](https://solscan.io/account/21jP79P297pg91xgpu3SSvNFhX4bASyZtwdoNS3GhHEw) | — |
-| **Liquidity Management** | 5% | 500,000,000 | 100% | 0 | – | Unlocked | Unlocked emergency reserve for liquidity pool management. | [Wallet](https://solscan.io/account/JBMoTF7h4HRhagXWmNnGiVeMN7Wsedne4zVsvPwCM1ew) | — |
+| **Liquidity Management** | 4.5% | 449,905,000 | 100% | 0 | – | Unlocked | Unlocked emergency reserve for liquidity pool management. Originally 5%: on Nov 3, 2026, 0.5% (50,000,000 FAYO) moved to the Advertiser vesting contract, and its 95,000 FAYO Streamflow fee (0.19%) was paid from this wallet. | [Wallet](https://solscan.io/account/JBMoTF7h4HRhagXWmNnGiVeMN7Wsedne4zVsvPwCM1ew) | — |
 | **Staking Rewards** | 8% | 785,370,000 (funded) | 0% | 0 | Until fund is used | Daily accrual | Locked in the Streamflow staking reward pool. 8% allocation minus 14,630,000 FAYO of Streamflow vesting fees (0.19%) = 785,370,000 FAYO funded. | [Stake Pool](https://app.streamflow.finance/staking/solana/mainnet/51NhiRZ1Q66kdkaz6YRw5x47CCTvinQ9gWfvbUrn6USt) | [Reward Pool](https://solscan.io/account/893nTo8dyei4A4jAxnshpvjpmcNGoMfZNKAXcvSDQt6q) |
 | **Creator** | 20% | 2,000,000,000 | 0% | 0 | 24 months | Monthly | Creator allocation, linear monthly vesting. | [Wallet](https://solscan.io/account/9AZHBoRnkzMy8HycsZCq2RKmUSrBjxrZkJrx3arJEaig) | [Streamflow](https://app.streamflow.finance/contract/solana/mainnet/5WLt2a5TyMQkwmqY3KXoA6i3Rfzz9i5espRpBUJutxt2) |
 | **Exchange Listings** | 16% | 1,600,000,000 | 0% | 0 | 12 months | Monthly | Reserved for exchange listings. | [Wallet](https://solscan.io/account/2LQenrvPVfYpZJGWxM5sUdzJF87UacanAv2oCpVYkTAP) | [Streamflow](https://app.streamflow.finance/contract/solana/mainnet/G62Muroa8XixmHr2KD74nuJ38uRu9tGQWYUXCsuNrSwW) |
@@ -65,11 +65,12 @@ It does not promise returns or the “next generation” of anything — it is a
 | **Airdrop** | 10% | 1,000,000,000 | 0% | 0 | 12 months | Monthly | Community airdrops. | [Wallet](https://solscan.io/account/3Jhw5nt1TLrV49966rnTThnMKJwbokNMiHSwza8Wz5WX) | [Streamflow](https://app.streamflow.finance/contract/solana/mainnet/3au9tYqKFvMi78k4NjWzNXt8r3qmok64qsXckPc1FMZ9) |
 | **Support & Development Team** | 10% | 1,000,000,000 | 0% | 0 | 12 months | Monthly | Support, development and operations. | [Wallet](https://solscan.io/account/AnoiVxWTW3VvXdrVys5q2xvr2zhEopkpXo2R1jiy66it) | [Streamflow](https://app.streamflow.finance/contract/solana/mainnet/5AByHDVAhX9yH6KNLyRwTL5HjsoBcBu2Vr8ozKjvQ5hx) |
 | **Services & Providers** | 1% | 100,000,000 | 0% | 0 | 12 months | Monthly | Payments to service providers (legal, tooling, infrastructure, etc.). | [Wallet](https://solscan.io/account/4wGvCwNtUpBD6SCuz6pesxAoKJp9ofEbkXD7PxCaeXBf) | [Streamflow](https://app.streamflow.finance/contract/solana/mainnet/25XG4v5MKu222P1nF9Jwg97CW4vYzZqoVV7Mz5ic8BMV) |
+| **Advertiser** | 0.5% | 50,000,000 | 0% | 0 | 12 months | Monthly | Advertiser allocation, linear monthly vesting (started Nov 3, 2026). Funded from Liquidity Management. | [Wallet](https://solscan.io/account/HyjPJutQS3FURYVKthhpjcQT3FrbLhThte6c3ZJm93GV) | [Streamflow](https://app.streamflow.finance/contract/solana/mainnet/8fTxKpJiwcyHuWQKoDF1bH2YP9S1HnzkPTbKpy2Qoe1u) |
 | **Total** | **100%** | **10,000,000,000** | | | | | | | |
 
-**Vesting terms (all 7 Streamflow contracts):** started Oct 30, 2026 (~11:20 UTC), linear monthly (every 30 days) unlocks, no cliff, cancelable: **No**, transferable: **No**.
+**Vesting terms (all 8 Streamflow contracts):** started Oct 30, 2026 (~11:20 UTC); Advertiser contract Nov 3, 2026, linear monthly (every 30 days) unlocks, no cliff, cancelable: **No**, transferable: **No**.
 
-> ℹ️ Streamflow charged a 0.19% fee on the 7.7B FAYO placed in vesting contracts (14,630,000 FAYO). This fee was taken from the 8% staking allocation, so 785,370,000 FAYO were funded into the staking reward pool.
+> ℹ️ Streamflow charged a 0.19% fee on the 7.7B FAYO placed in vesting contracts (14,630,000 FAYO). This fee was taken from the 8% staking allocation, so 785,370,000 FAYO were funded into the staking reward pool. The Advertiser contract (50,000,000 FAYO, added Nov 3, 2026) carried a separate 95,000 FAYO fee, paid from the Liquidity Management wallet.
 
 ### 🔗 On-chain Proof (wallets, contracts, transactions)
 
@@ -85,6 +86,7 @@ It does not promise returns or the “next generation” of anything — it is a
 | **Airdrop** | [`3Jhw5nt1TLrV49966rnTThnMKJwbokNMiHSwza8Wz5WX`](https://solscan.io/account/3Jhw5nt1TLrV49966rnTThnMKJwbokNMiHSwza8Wz5WX) | [`3au9tYqKFvMi78k4NjWzNXt8r3qmok64qsXckPc1FMZ9`](https://app.streamflow.finance/contract/solana/mainnet/3au9tYqKFvMi78k4NjWzNXt8r3qmok64qsXckPc1FMZ9) | [Create vesting: `5wPqrw…chTq6s`](https://solscan.io/tx/5wPqrwNnJRXCNGwXRqmTCYgAi68Qoz867yfksCJeNBQ9GLNa8Cq64JhfFMMpCBuiYQHw1YgEU9Zcg8QEadchTq6s) |
 | **Support & Development Team** | [`AnoiVxWTW3VvXdrVys5q2xvr2zhEopkpXo2R1jiy66it`](https://solscan.io/account/AnoiVxWTW3VvXdrVys5q2xvr2zhEopkpXo2R1jiy66it) | [`5AByHDVAhX9yH6KNLyRwTL5HjsoBcBu2Vr8ozKjvQ5hx`](https://app.streamflow.finance/contract/solana/mainnet/5AByHDVAhX9yH6KNLyRwTL5HjsoBcBu2Vr8ozKjvQ5hx) | [Create vesting: `ztwuRS…DssWDE`](https://solscan.io/tx/ztwuRSsocroXsK7RsqujcCoBbNfHRje38CtuHM79HTwhjgxydxuoKkXvJuD9mrj9evna3MnMiLJEqwNVkDssWDE) |
 | **Services & Providers** | [`4wGvCwNtUpBD6SCuz6pesxAoKJp9ofEbkXD7PxCaeXBf`](https://solscan.io/account/4wGvCwNtUpBD6SCuz6pesxAoKJp9ofEbkXD7PxCaeXBf) | [`25XG4v5MKu222P1nF9Jwg97CW4vYzZqoVV7Mz5ic8BMV`](https://app.streamflow.finance/contract/solana/mainnet/25XG4v5MKu222P1nF9Jwg97CW4vYzZqoVV7Mz5ic8BMV) | [Create vesting: `TAjCkw…sSpTXm`](https://solscan.io/tx/TAjCkwCVYTD2FX9iuqUPhXQzRTzY1ys3W5CuMa1Zih9PiSd73wAKXjAKD8oFTE8T2XHzpD4KUJ8dt5ESLsSpTXm) |
+| **Advertiser** | [`HyjPJutQS3FURYVKthhpjcQT3FrbLhThte6c3ZJm93GV`](https://solscan.io/account/HyjPJutQS3FURYVKthhpjcQT3FrbLhThte6c3ZJm93GV) | [`8fTxKpJiwcyHuWQKoDF1bH2YP9S1HnzkPTbKpy2Qoe1u`](https://app.streamflow.finance/contract/solana/mainnet/8fTxKpJiwcyHuWQKoDF1bH2YP9S1HnzkPTbKpy2Qoe1u) | [Create vesting: `34zsTQ…77HAjT`](https://solscan.io/tx/34zsTQEVzYhPnDwzfSHBX5SMm5PMQo1eBaq5kaHdn8Tq7h8St5ghXsHvUi2H4htX3qg5J71tATAEKHmyWZ77HAjT) |
 
 ---
 
@@ -92,7 +94,7 @@ It does not promise returns or the “next generation” of anything — it is a
 
 💧 Liquidity in FAYO is multi-layered:
 - **10% Initial Liquidity** — 1,000,000,000 $FAYO, unlocked, held for the future Meteora liquidity pool.
-- **5% Liquidity Management** — 500,000,000 $FAYO, unlocked emergency reserve for pool management.
+- **4.5% Liquidity Management** — 449,905,000 $FAYO, unlocked emergency reserve for pool management (0.5% was moved to the Advertiser vesting contract on Nov 3, 2026).
 - **10% Liquidity Reserve** — 1,000,000,000 $FAYO, locked in Streamflow and unlocking monthly over 12 months.
 
 - 💧 Meteora Liquidity Pool — Coming soon / TBA
