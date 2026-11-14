@@ -55,7 +55,7 @@ It does not promise returns or the “next generation” of anything — it is a
 
 {{allocation_table}}
 
-**Vesting terms (all 8 Streamflow contracts):** started {{vesting.start}}, linear {{vesting.unlock_period}} unlocks, no cliff, cancelable: **{{vesting.cancelable}}**, transferable: **{{vesting.transferable}}**.
+**Vesting terms (all 9 Streamflow contracts):** started {{vesting.start}}, linear {{vesting.unlock_period}} unlocks, no cliff, cancelable: **{{vesting.cancelable}}**, transferable: **{{vesting.transferable}}**.
 
 > ℹ️ {{vesting.fee_note}}
 
@@ -69,7 +69,7 @@ It does not promise returns or the “next generation” of anything — it is a
 
 💧 Liquidity in {{project.name}} is multi-layered:
 - **10% Initial Liquidity** — 1,000,000,000 {{project.ticker}}, unlocked, held for the future Meteora liquidity pool.
-- **4.5% Liquidity Management** — 449,905,000 {{project.ticker}}, unlocked emergency reserve for pool management (0.5% was moved to the Advertiser vesting contract on Nov 3, 2026).
+- **4.25% Liquidity Management** — 424,857,500 {{project.ticker}}, unlocked emergency reserve for pool management (0.5% was moved to the Advertiser vesting contract on Nov 3, 2026, and 0.25% to the Investor vesting contract on Nov 14, 2026).
 - **10% Liquidity Reserve** — 1,000,000,000 {{project.ticker}}, locked in Streamflow and unlocking monthly over 12 months.
 
 - 💧 Meteora Liquidity Pool — {{links.meteora}}
